@@ -53,13 +53,14 @@ public class FileProcessor {
                         break;
                     default:
                         break;
-                }            }
-        } catch (IOException e) {
+                }
+            }
+            ProcessingReport processingReport = new ProcessingReport(transaction, tracking, termination, file, fileName);
+            DbConnection.connectToDatabase(processingReport);
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        ProcessingReport processingReport = new ProcessingReport(transaction, tracking, termination, file, fileName);
-        log.info("processingReport : {} ", processingReport);
     }
 
 }

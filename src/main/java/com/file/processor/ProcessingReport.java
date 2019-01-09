@@ -1,8 +1,10 @@
 package com.file.processor;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "processing_report")
 public class ProcessingReport {
 
     private int transaction;
@@ -20,6 +22,26 @@ public class ProcessingReport {
         this.termination = termination;
         this.file = file;
         this.filename = filename;
+    }
+
+    public int getTransaction() {
+        return transaction;
+    }
+
+    public int getTracking() {
+        return tracking;
+    }
+
+    public int getTermination() {
+        return termination;
+    }
+
+    public int getFile() {
+        return file;
+    }
+
+    public String getFilename() {
+        return filename;
     }
 
     @Override
